@@ -14,6 +14,7 @@ echo "firstboot.sh : database available, let's go"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('trackball_wake_screen', 1);" 
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('trackball_unlock_screen', 1);" 
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('lock_home_in_memory', 1);"
+/system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('lock_mms_in_memory', 1);"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('lockscreen_rotary_unlock_down', 0);"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('lockscreen_rotary_hide_arrows', 0);"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO system (name, value) VALUES ('lockscreen_custom_app_toggle', 0);"
@@ -24,3 +25,8 @@ echo "firstboot.sh : database available, let's go"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO secure (name, value) VALUES ('device_provisioned', 1);"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO secure (name, value) VALUES ('install_non_market_apps', 1);"
 /system/xbin/sqlite3 $DATABASE "INSERT INTO secure (name, value) VALUES ('allow_move_all_apps_external', 1);"
+
+# Persist sysprop
+mkdir /data/property/
+echo 1 > /data/property/persist.sys.purgeable_assets
+echo 0 > /data/property/persist.sys.use_dithering
