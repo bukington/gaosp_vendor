@@ -200,6 +200,7 @@ PRODUCT_PACKAGES := \
     libssl \
     libz \
     openvpn \
+    screen \
     sqlite-jdbc \
     azerty.kcm \
     framework-res \
