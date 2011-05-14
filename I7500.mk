@@ -1,7 +1,8 @@
 WITH_GOOGLE := true
+CYANOGEN_WITH_GOOGLE := true
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=I7500 BUILD_ID=GRH78C BUILD_DISPLAY_ID=GRH78 BUILD_FINGERPRINT=google/passion/passion/mahimahi:2.2.1/FRG83D/75603:user/release-keys
-PRIVATE_BUILD_DESC="passion-user 2.2.1 FRG83D 75603 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=I7500 BUILD_ID=GRJ22 BUILD_DISPLAY_ID=GRJ22 BUILD_FINGERPRINT=google/passion/passion:2.3.4/GRJ22/121341:user/release-keys
+PRIVATE_BUILD_DESC="passion-user 2.3.4 GRJ22 121341 release-keys"
 DEVICE_PACKAGE_OVERLAYS := device/samsung/I7500/overlay
 
 PACKAGES.Email.OVERRIDES := Provision LatinIME QuickSearchBox
@@ -73,7 +74,7 @@ endif
 # Nightly
 ifdef NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=GAOSP-3-$(shell date +%m%d%Y)-NIGHTLY
+        ro.modversion=GAOSP-3-NIGHTLY-$(shell date +%m%d%Y)
 else
     PRODUCT_PROPERTY_OVERRIDES += \
         ro.modversion=GAOSP-3-PUBLIC-BETA-1
